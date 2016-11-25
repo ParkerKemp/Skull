@@ -11,7 +11,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.javadoc.skip>true</maven.javadoc.skip>
 	</properties>
-	<url>http://github.com/ParkerKemp/Spinalpack</url>
+	<url>http://github.com/ParkerKemp/Skull</url>
 	<repositories>
 		<repository>
 			<id>spigot-repo</id>
