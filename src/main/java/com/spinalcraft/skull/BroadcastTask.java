@@ -12,6 +12,10 @@ public class BroadcastTask extends BukkitRunnable{
 
 	@Override
 	public void run() {
-		Bukkit.broadcastMessage(message);
+		Bukkit.broadcastMessage(replaceColors(message));
+	}
+	
+	public static String replaceColors(String string){
+		return string.replaceAll("(?i)&([a-k0-9])", "\u00A7$1");
 	}
 }
