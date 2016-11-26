@@ -16,6 +16,6 @@ public class BroadcastTask extends BukkitRunnable{
 	}
 	
 	public static String replaceColors(String string){
-		return string.replaceAll("&([a-f0-9])", "\u00A7$1");
+		return string.replaceAll("&", "\u00A7");
 	}
 }
