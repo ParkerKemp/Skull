@@ -99,7 +99,7 @@ public abstract class SpinalcraftPlugin extends JavaPlugin {
 	}
 	
 	public static PreparedStatement prepareStatement(String query) throws SQLException{
-		return conn.prepareStatement(query);
+		return conn.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 	}
 	
 	
