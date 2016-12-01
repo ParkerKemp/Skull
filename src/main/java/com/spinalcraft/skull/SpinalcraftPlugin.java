@@ -70,7 +70,7 @@ public abstract class SpinalcraftPlugin extends JavaPlugin {
 		}
 	}
 	
-	protected static boolean update(String query){
+	public static boolean update(String query){
 		Statement stmt;
 		if(conn == null)
 			System.out.println("Conn is null!");
