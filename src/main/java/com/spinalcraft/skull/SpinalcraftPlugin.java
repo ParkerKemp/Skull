@@ -30,6 +30,8 @@ public abstract class SpinalcraftPlugin extends JavaPlugin {
 		
 		console.sendMessage(ChatColor.BLUE + this.getName() + " online!");
 		createDatabase();
+		
+		loadPreemptiveClasses();
 	}
 	
 	@Override
@@ -42,6 +44,21 @@ public abstract class SpinalcraftPlugin extends JavaPlugin {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void loadPreemptiveClasses(){
+		for (String preemptiveClass : this.getPreemptiveClassNames()){
+			try {
+				System.out.println("Loading class preemptively: " + preemptiveClass);
+				this.getClassLoader().loadClass(preemptiveClass);
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	protected String[] getPreemptiveClassNames(){
+		return null;
 	}
 	
 	public void broadcastMessage(String message){
