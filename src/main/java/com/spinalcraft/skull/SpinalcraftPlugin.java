@@ -47,12 +47,16 @@ public abstract class SpinalcraftPlugin extends JavaPlugin {
 	}
 	
 	private void loadPreemptiveClasses(){
-		for (String preemptiveClass : this.getPreemptiveClassNames()){
-			try {
-				System.out.println("Loading class preemptively: " + preemptiveClass);
-				this.getClassLoader().loadClass(preemptiveClass);
-			} catch (ClassNotFoundException e) {
-				e.printStackTrace();
+		String[] classNames = this.getPreemptiveClassNames();
+		
+		if(classNames != null){
+			for (String className : classNames){
+				try {
+					System.out.println("Loading class preemptively: " + className);
+					this.getClassLoader().loadClass(className);
+				} catch (ClassNotFoundException e) {
+					e.printStackTrace();
+				}
 			}
 		}
 	}
